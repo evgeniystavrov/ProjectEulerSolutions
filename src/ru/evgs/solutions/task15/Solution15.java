@@ -10,8 +10,6 @@ package ru.evgs.solutions.task15;
 import java.math.BigInteger;
 
 public class Solution15 {
-	// фиксируем количество рёбер образующих строну таблицы
-	private static final int EDGE_COUNT = 2;
 
 	public static void main(String[] args){
 		System.out.println(new Solution15().run());
@@ -27,7 +25,7 @@ public class Solution15 {
 		*/
 		return Solution15.binomial(40, 20).toString();
 	}
-
+	// метод реализующий бином
 	private static BigInteger binomial(int n, int k) {
 		if (k < 0 || k > n)
 			throw new IllegalArgumentException();
@@ -36,7 +34,7 @@ public class Solution15 {
 			product = product.multiply(BigInteger.valueOf(n - i));
 		return product.divide(factorial(k));
 	}
-
+	// метод реализующий факториал
 	private static BigInteger factorial(int n) {
 		if (n < 0)
 			throw new IllegalArgumentException("Factorial of negative number");
